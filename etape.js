@@ -37,7 +37,7 @@ app.get('/',  (req, res) => {
 })
 
 //etape 4
-app.get('/',  (req, res) => {
+app.get('/ajouter',  (req, res) => {
 		
 		db.provinces.insert({
 			code : "QC",
@@ -48,12 +48,12 @@ app.get('/',  (req, res) => {
 })
 
 //etape 5
-app.get('/detruire/:id', (req, res) => {
- var id = req.params.id
- console.log(id)
+app.get('/detruire', (req, res) => {
+
  db.provinces.drop()
  
  res.redirect('/')  
 })
 
 //etape 6
+
