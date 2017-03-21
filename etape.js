@@ -11,3 +11,33 @@ app.use(bodyParser.json())  // pour traiter les données JSON
 
 
 
+///etape 3
+
+var db 
+
+MongoClient.connect('mongodb://127.0.0.1:27017/carnet_adresse', (err, database) => {
+  if (err) return console.log(err)
+  db = database
+  app.listen(8081, () => {
+    console.log('connexion à la BD sur le port 8081')
+  })
+})
+
+app.get('/',  (req, res) => {
+   console.log('la route route get / = ' + req.url)
+ 
+    var cursor = db.collection('provinces').find().toArray(function(err, resultat){
+       if (err) return console.log(err)
+
+    res.render('index.ejs', {provinces: resultat})
+
+    }) 
+    
+
+})
+
+//etape 4
+
+//etape 5
+
+//etape 6
