@@ -56,4 +56,10 @@ app.get('/detruire', (req, res) => {
 })
 
 //etape 6
+app.get('/etape6', (req, res) => {
 
+ db.createCollection("provinces");
+ 
+ 
+  
+})
