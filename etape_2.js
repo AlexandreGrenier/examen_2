@@ -9,7 +9,7 @@ fs.readFile('public/text/collection_provinces.json', function (err, data){
 function etape2(){
 	 var chaine = "";
 
-	chaine = chaine+"<table style='border-right: 1px solid black'>";
+	chaine = chaine+"<table style='border: 1px solid black'>";
 	for (var i = 0; i <= obj.length-1; i++) {
 
 		chaine = chaine+"<tr><td>" + obj[i][0].toString() + "</td><td>" + obj[i][1].toString()+ "</td><td>"+ obj[i][2].toString()+"</td></tr>";
@@ -19,3 +19,4 @@ function etape2(){
 	return chaine;
 }
 
+write(etape2());
