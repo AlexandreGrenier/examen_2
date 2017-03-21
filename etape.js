@@ -37,7 +37,23 @@ app.get('/',  (req, res) => {
 })
 
 //etape 4
+app.get('/',  (req, res) => {
+		
+		db.provinces.insert({
+			code : "QC",
+			nom : "Québec",
+			capital: (Math.floor(Math.random() * 200) + 100).toString()
+		})
+		res.redirect('/')
+})
 
 //etape 5
+app.get('/detruire/:id', (req, res) => {
+ var id = req.params.id
+ console.log(id)
+ db.provinces.drop()
+ 
+ res.redirect('/')  
+})
 
 //etape 6
